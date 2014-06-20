@@ -29,6 +29,7 @@ Just press "Ctrl-," (Windows/Linux) or "Command-," (Mac) and configure the edito
     ],
     "css": [
         "static/lib/ace/*.css",
+        "static/src/css/ace_editor.css",
     ],
     "js": [
         "static/lib/require.js/*.js",

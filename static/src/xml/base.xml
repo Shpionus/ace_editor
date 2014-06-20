@@ -6,10 +6,7 @@
             t-att-name="widget.name"
             t-att-id="widget.element_id"
             t-attf-class="field_#{widget.type}"
-            style="width: 100%; height:400px;"
         ></div>
-        <img class="oe_field_translate oe_form_field_translatable oe_input_icon" t-if="widget.field.settings" t-att-src='_s + "/web/static/src/img/icons/gtk-execute.png"' width="16" height="16" border="0"/>
-        <div t-att-id="widget.cm_id" class="themSelector" style="display:none"></div>
     </t>
 
 </templates>
