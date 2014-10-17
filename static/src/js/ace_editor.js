@@ -56,8 +56,9 @@ openerp.ace_editor = function(openerp) {
             this.update_dom();
         },
         update_dom: function(show_invalid) {
+            var self = this;
             this._super.apply(this, arguments);
-            this.editor.setReadOnly(this.readonly);
+            this.editor.setReadOnly(self.is_readonly());
         },
         set_value_from_ui: function() {
             var value = openerp.web.parse_value(this.editor.getValue(), this);
@@ -77,6 +78,9 @@ openerp.ace_editor = function(openerp) {
         },
         is_valid: function() {
             return !this.invalid;
+        },
+        is_readonly: function() {
+            return this.readonly || this.force_readonly;
         },
         on_ui_change: function() {
             this.dirty = true;
@@ -98,7 +102,7 @@ openerp.ace_editor = function(openerp) {
         start: function() {
             var self = this;
             this._super.apply(this, arguments);
-            this.readonly = true;
+            this.force_readonly = true;
         }
     });
     openerp.web.page.readonly.add('ace_editor', 'openerp.ace_editor.widgets.AceEditorReadOnly');
